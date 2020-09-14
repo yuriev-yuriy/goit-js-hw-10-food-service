@@ -19,16 +19,19 @@ function changeTheme() {
     'theme',
     JSON.stringify(currentTheme),
   );
+  console.log(localStorage.setItem('theme', JSON.stringify(currentTheme)));
 }
 
 const savedTheme = localStorage.getItem('theme');
 const parsedTheme = JSON.parse(savedTheme);
-console.log(parsedTheme);
+console.log(Object.values(parsedTheme));
+
 if (bodyRef.classList === Theme.DARK) {
   switchRef.checked = true;
 }
-if (savedTheme) {
-  bodyRef.classList = parsedTheme;
+if (parsedTheme === Theme.DARK) {
+  bodyRef.classList = Object.values(parsedTheme);
 }
+// console.log(Object.values(parsedTheme));
 
 // const parseTheme = JSON.parse();

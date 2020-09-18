@@ -21,7 +21,6 @@ function changeTheme() {
 const savedTheme = localStorage.getItem('theme');
 const parsedTheme = JSON.parse(savedTheme);
 if (parsedTheme === 'dark-theme') {
-  console.log('yes');
   bodyRef.classList = parsedTheme;
   switchRef.checked = true;
 }
